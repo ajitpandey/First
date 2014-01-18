@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ajit</groupId>
+    <artifactId>FirstEclipseProject</artifactId>
+    <version>0.0.1</version>
+  </parent>
+  <artifactId>FirstEarApp</artifactId>
+  <packaging>ear</packaging>
+  <name>FirstEarApp</name>
+  <description>EAR Project</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.ajit.service</groupId>
+  		<artifactId>FirstService</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.ajit.web</groupId>
+  		<artifactId>FirstWebApp</artifactId>
+  		<type>war</type>
+  	</dependency>
+  </dependencies>
+  <build>
+      <plugins>
+         <plugin>
+            <artifactId>maven-ear-plugin</artifactId>
+            <configuration>
+               <archive>
+                  <manifest>
+                     <addClasspath>true</addClasspath>
+                  </manifest>
+               </archive>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+</project>
